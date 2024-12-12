@@ -79,7 +79,7 @@ Ensure the following are installed:
 
 The project is live on Vercel. Visit the app at:
 
-[Your Vercel Deployment URL]
+[Here](https://dictionarywebapp-chi.vercel.app)
 
 ## 🤝 Contributing
 
