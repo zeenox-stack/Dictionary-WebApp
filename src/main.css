@@ -1,0 +1,363 @@
+.light {
+  background-color: rgb(226, 226, 226);
+  color: rgb(26, 25, 25);
+  --light-color: rgb(61, 61, 61);
+}
+
+.dark {
+  background-color: rgb(26, 25, 25);
+  color: rgb(250, 250, 250);
+  --light-color: rgb(189, 189, 189);
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  overflow-x: hidden;
+  width: 75%; 
+  margin: 0 auto;
+}
+
+#root {
+  width: 100vw;
+  display: flex; 
+  justify-content: center; 
+  overflow: hidden; 
+}
+
+header {
+  padding-top: 0;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 5.5rem;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: inherit;
+}
+
+.arrow {
+  position: relative;
+}
+
+.arrow::before {
+  position: absolute;
+  content: "^";
+  top: -0.7rem;
+  right: 13%;
+  pointer-events: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  font-style: bolder;
+  color: blueviolet;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+.head-hr {
+  position: absolute;
+  top: 1.2rem;
+  right: 6rem;
+  height: 2rem;
+  z-index: 2;
+}
+
+#theme-toggle {
+  opacity: 0;
+  width: 3rem;
+}
+
+.slider {
+  background-color: rgb(61, 61, 61);
+  width: 3rem;
+  height: 2rem;
+  border-radius: 2rem;
+  position: relative;
+  transition: background-color 1s ease;
+}
+
+.slider-button {
+  position: absolute;
+  content: " ";
+  background-color: rgb(202, 202, 202);
+  height: 1.4rem;
+  width: 1.4rem;
+  top: 15%;
+  left: 7%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(85%);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(85%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.search-area {
+  position: relative; 
+  width: 100%; 
+
+}
+
+#word-search {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  padding-left: 1rem;  
+  box-sizing: border-box;
+  margin-top: 1rem;
+  background-color: rgb(216, 216, 216);
+  outline: none;
+}
+
+.search-word {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 3rem;
+  top: 1.7rem;
+}
+
+.search-word > img {
+  height: 1.5rem;
+}
+
+.error {
+  color: red;
+  font-family: inherit;
+}
+
+.word-info > h2 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  font-family: inherit;
+}
+
+.phonetic {
+  color: blueviolet;
+  font-size: 1.8rem;
+  margin-top: 0;
+  font-family: inherit;
+}
+
+.audio {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control-audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  padding: 1.7rem;
+  background-color: rgb(183, 158, 206);
+  border: none;
+}
+
+.control-audio > img {
+  height: 1.5rem;
+  cursor: pointer;
+  transition: src 0.3s ease;
+}
+
+img[src="./Icons/pause.svg"] {
+  padding-left: 0.5rem;
+}
+
+.description-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.audio-guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.speech {
+  display: flex;
+  position: relative;
+}
+
+.speech > p {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1.8rem; 
+  margin-top: 0.8rem;
+}
+
+.speech > hr {
+  position: absolute;
+  right: 0;
+  top: 1.3rem;
+  width: 90%;
+  border: none;
+  background-color: rgb(184, 184, 184);
+  height: 2px;
+}
+
+.synonyms {
+  display: flex;
+  align-items: center;
+}
+
+.meaning > h4,
+.synonyms > h4,
+.source > h4,
+.example {
+  opacity: 0.5;
+  font-family: inherit; 
+  font-size: 1.5rem;
+}
+
+.synonym {
+  color: blueviolet;
+  font-family: inherit;
+  padding-left: 1rem;
+}
+
+.link {
+  color: var(--light-color);
+}
+
+.meaning-list > li {
+  font-size: 1.2rem;
+}
+
+.meaning-list > li::marker {
+  color: blueviolet;
+}
+
+.theme-image {
+  padding-left: 1rem;
+}
+
+.source {
+  display: flex; 
+  align-items: center; 
+}
+
+.link {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .word-info > h2 {
+    font-size: 2.9rem;
+  }
+
+  .phonetic {
+    font-size: 1.6rem;
+  }
+
+  .speech > p {
+    font-size: 1.5rem;
+  }
+
+  .meaning > h4,
+  .synonyms > h4,
+  .source > h4,
+  .example {
+    font-size: 1.6rem;
+  }
+
+  .meaning-list > li {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  .image > img {
+    height: 4rem;
+  }
+
+  .container { 
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .word-info > h2 {
+    font-size: 2rem;
+  }
+
+  .phonetic {
+    font-size: 1rem;
+  }
+
+  .speech > p {
+    font-size: 1rem;
+  }
+
+  .meaning > h4,
+  .synonyms > h4,
+  .source > h4,
+  .example {
+    font-size: 1rem;
+  }
+
+  .meaning-list > li {
+    font-size: 0.9rem;
+  }
+}
